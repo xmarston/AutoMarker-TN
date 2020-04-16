@@ -1,14 +1,13 @@
 import { Browser } from './Browser'
+import { CONSTANTS } from './Constants'
 
 export default class AutoMarker {
   private browser: Browser
-  protected url: string
   protected pinCode: number
   protected markAction: number
   protected timeout: number
 
-  constructor(url: string, pinCode: number, markAction: number) {
-    this.url = url
+  constructor(pinCode: number, markAction: number) {
     this.pinCode = pinCode
     this.browser = new Browser('chrome', true)
     this.markAction = markAction
@@ -16,7 +15,7 @@ export default class AutoMarker {
 
   async start(): Promise<any> {
     try {
-      this.navigateTo(this.url)
+      this.navigateTo(CONSTANTS.url)
 
       await this.waitUntil('.form-control.gpi-input')
       await this.inputInElement('.form-control.gpi-input', this.pinCode.toString())
