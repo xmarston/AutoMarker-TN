@@ -15,7 +15,7 @@ declare module 'auto-marker' {
 
   And the outptut will see something similar to "AutoMaker did it for you, new mark at 14:36"
   */
-  class AutoMarker {
+  export default class AutoMarker {
     constructor(pinCode: number, markAction: number)
     start(): Promise<any>
     navigateTo(url: string): void

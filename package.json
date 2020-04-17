@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Auto marker for TimeNet",
   "main": "dist/AutoMarker.js",
+  "types": "index.d.ts",
   "scripts": {
     "build": "rm -rf ./dist/ && tsc",
     "start": "node dist/AutoMarker.js"
