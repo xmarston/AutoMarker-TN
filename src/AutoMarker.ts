@@ -1,5 +1,5 @@
-import { Browser } from './Browser'
-import { CONSTANTS } from './Constants'
+import Browser from './Browser'
+import CONSTANTS from './Constants'
 
 export default class AutoMarker {
   private browser: Browser

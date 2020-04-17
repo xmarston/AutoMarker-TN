@@ -3,10 +3,10 @@ import { Builder, ThenableWebDriver, WebElement, By, WebElementPromise, until } 
 import { Options as ChromeOptions } from 'selenium-webdriver/chrome'
 import { promises as fsp } from 'fs'
 
-export class Browser {
+export default class Browser {
   private driver: ThenableWebDriver
 
-  public constructor(private browserName: string, headless: boolean) {
+  public constructor(browserName: string, headless: boolean) {
     const options = new ChromeOptions()
 
     if (headless) {
@@ -42,7 +42,7 @@ export class Browser {
     await this.driver.wait(until.elementLocated(By.css(selector)))
   }
 
-  public delay(ms: number) {
+  public delay(ms: number): Promise<any> {
     return new Promise(resolve => setTimeout(resolve, ms))
   }
 
